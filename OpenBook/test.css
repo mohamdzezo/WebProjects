@@ -1,0 +1,28 @@
+
+.book-card{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    font-size:small;
+    padding: 0 0 20px 20px;
+    background-color:green;
+    margin-top: 20px;
+}
+.content-wrapper{
+
+    flex-wrap: nowrap;
+    display:flex;
+    width: 40%px;
+}
+
+.book-cards{
+    display: grid;
+    grid-column-gap: 40px;
+    flex-wrap: wrap;
+}
+
+.book-card-img{
+    display:flex;
+    width: 100px;
+    height: 120px;
+}
