@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import BookCard from './home'
+import BookCard from './bookcard'
+import Page from './booklist';
 
 ReactDOM.render(
   <React.StrictMode>
-  <BookCard/>
+  <Page/>
   </React.StrictMode>,
   document.getElementById('root')
 );

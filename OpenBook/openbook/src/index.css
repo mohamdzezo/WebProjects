@@ -8,7 +8,7 @@
   --placeholder: #ccd0d2;
 }
 
-.book-cards{
+.book-cards {
   display: grid;
   grid-column-gap: 40px;
   flex-wrap: wrap;
@@ -16,41 +16,50 @@
   position: relative;
 }
 
-
-.book-card{
+.book-card {
   position: relative;
   flex-direction: column;
- 
-  font-size:small;
+  font-size: small;
   padding: 0 0 20px 20px;
   margin-top: 20px;
   box-shadow: -1px 3px 8px -1px rgb(0 0 0 / 10%);
-
 }
-.content-wrapper{
 
+.content-wrapper {
   flex-wrap: nowrap;
-  display:flex;
+  display: flex;
   border-bottom: 1px solid #ebedef;
-  
 }
 
-
-.book-card-img{
+.book-card-img {
   width: 160px;
-  border-radius : 3px;
+  border-radius: 3px;
   box-shadow: 0px 1px 7px 2px #c7c9d3;
   margin-left: -10px;
   margin-right: 20px;
   margin-bottom: 20px;
+  transition: 0.3s ease;
 }
 
-.card-content{
+.book-card-img:hover {
+  transform: scale(1.04);
+}
+
+
+.card-content {
   position: relative;
   color: var(--body-color);
 }
 
-.book-by{
+.book-name {
+  font-size: 20px;
+  font-weight: 500px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.book-by {
   font-size: 13px;
   margin-top: 4px;
   text-overflow: ellipsis;
@@ -58,55 +67,65 @@
   white-space: nowrap;
 }
 
-
-.book-name{
-  font-size: 20px;
-  font-weight: 500px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.rate{
-  display: inline-block;
-  white-space: nowrap;
-}
-fieldset {
-  display: block;
-  margin-inline-start: 2px;
-  margin-inline-end: 2px;
-  padding-block-start: 0.35em;
-  padding-inline-start: 0.75em;
-  padding-inline-end: 0.75em;
-  padding-block-end: 0.625em;
-  min-inline-size: min-content;
-  border-width: 2px;
-  border-style: groove;
-  border-color: threedface;
-  border-image: initial;
+.star-input {
+  display: none;
 }
 
-input[type="checkbox" i] {
-  background-color: initial;
-  cursor: default;
-  appearance: auto;
-  box-sizing: border-box;
-  margin: 3px 3px 3px 4px;
-  padding: initial;
-  border: initial;
-  content: "★";
-}
-
-.rating > label:before {
+.rating-star{
   margin-right: 5px;
   margin-top: 10px;
   font-size: 0.9em;
   font-family: FontAwesome;
   display: inline-block;
-  content: "";
 }
 
 
-.star-input{
-  display: none;
+.book-rate{
+  display:flex;
+  align-items:center;
+}
+.card-vote{
+  font-size : 10px;
+  color: rgb(98, 95, 95);
+  padding-top: 10px;
+}
+
+.header{
+  height: 70px;
+  width: 100%;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 14px;
+  align-items: center;
+
+}
+.browse, .header{
+  display:flex;
+}
+.browse-category {
+  display:flex;
+  border-right: 1px solid var(--border-color);
+  white-space: nowrap;
+  align-items: center;
+  color: grey;
+
+}
+
+.user-img{
+  width:50px;
+  border-radius: 50%;
+  border-width: 2px;
+  margin-right: 20px;
+}
+.profile{
+  display:flex;
+  align-items: center;
+  color:grey;
+}
+.profile-menu span{
+  font-size: 20px;
+  font-family: Arial;
+}
+.menu-bar{
 }
 
