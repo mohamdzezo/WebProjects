@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MailBox from './components/Mailbox'
+import Home from './components/Home'
 
 ReactDOM.render(
   <React.StrictMode>
-    <MailBox />
+    <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );
