@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import MailBox from './components/Mailbox'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MailBox />
   </React.StrictMode>,
   document.getElementById('root')
 );
