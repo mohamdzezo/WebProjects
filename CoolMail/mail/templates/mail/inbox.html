@@ -1,0 +1,79 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    <aside id="sidebar" class="nano">
+        <div class="nano-content">
+          <div class="logo-container">
+              <span class="logo glyphicon glyphicon-envelope">
+              </span>Mail</div>
+        <a id = "compose" class="compose-button">Compose</a>
+          <menu class="menu-segment">
+            <ul>
+
+              <li id="inbox" class="active"><a>Inbox<span> (43)</span></a></li>
+              <li id="archived"> <a>archive</a></li>
+              <li id="sent"><a>Sent</a></li>
+              <li><a class="btn btn-sm btn-outline-primary" href="{% url 'logout' %}">Log Out</a></li>
+
+            </ul>
+          </menu>
+        </div>
+      </aside>
+
+
+
+        <main id="main">
+          <div id="emails-view">
+              <header class="header">
+                <div class="search-box">
+                  <input placeholder="Search..."><span class="icon glyphicon glyphicon-search"></span>
+                </div>
+                <h1 class="page-title"><a class="sidebar-toggle-btn trigger-toggle-sidebar"><span class="line"></span><span class="line"></span><span class="line"></span></a>Inbox<a></h1>
+              </header>
+          
+              <div id="main-nano-wrapper" class="nano">
+                <div class="nano-content">
+                  <ul id = "maillist" class="message-list">
+                  </ul><a href="#" class="load-more-link">Show more messages</a>
+                </div>
+              </div>
+          </div>
+
+          <div id="compose-view" class="compose">
+            <header class="header">
+              <h1 class="page-title"><a class="sidebar-toggle-btn trigger-toggle-sidebar"><span class="line"></span><span class="line"></span><span class="line"></span></a>New Emai</h1>
+            </header>
+            <div id="main-nano-wrapper" class="nano">
+              <div class="nano-content">
+                <form id="compose-form" class ="compose-form">
+                    <div>
+                        From: <input disabled value="{{ request.user.email }}" class = "compose-label">
+                    </div>
+                    <div class>
+                        To: <input id="compose-recipients" class = "compose-label">
+                    </div>
+                    <div >
+                        <input  class = "compose-label" id="compose-subject" placeholder="Subject">
+                    </div>
+                    <textarea class ="compose-body" id="compose-body" placeholder="Body"></textarea>
+                    <input type="submit" class="btn btn-primary"/>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+          
+          </main>
+
+        
+
+
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}
