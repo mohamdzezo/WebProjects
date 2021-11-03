@@ -4,8 +4,8 @@ import "./styles.css"
 import { FaStar } from "react-icons/fa";
 let Message ={
     isread : true,
-    sender: 'mido',
-    subject: 'haconma matatta',
+    sender: 'mohamdmido2011@gmail.com',
+    subject: 'haconma matatta haconma matattahaconma matattahaconma matattahaconma matattahaconma matatta',
     date: '12/9/2020'
 }
 function MailBox ({message = Message}){

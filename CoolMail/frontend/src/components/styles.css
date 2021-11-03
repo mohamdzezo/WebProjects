@@ -166,6 +166,8 @@
     overflow: hidden;
     white-space: nowrap;
     justify-self:center;
+    font-size: 15px;
+    padding-left: 10px;
   }
   .summary-start{
     display: block;
@@ -176,24 +178,23 @@
   }
 
   .sender{
-    width: 220px;
+    width: 150px;
     position: sticky;
     left: 43px;
     font-weight: bold;
   }
-  
-  .subject{
+  .subject {
     display: block;
-    width: 200px;
-    position: sticky;
+    width: 466px;
+    position: inherit;
     left: 293px;
     transition: 0.5s;
-  }
+}
 
 .date{
   height: 25px;
   position: absolute;
-  right: 239px;
+  right: 200px;
   width: 150px;
   transform: 0.5s;
   transition: 0.5s;
@@ -278,6 +279,8 @@
   color:gray;
   margin-right: 10px;
   padding-top: 8px;
+  transform: 0.5s;
+  transition: 0.5s;
 }
 
 .main-content{
@@ -316,3 +319,48 @@
 height:25px;
 width:200px;
 }
+@media only screen and (min-width:1060px) {
+  .sidebar-btn{
+    margin-right: 20px;
+    opacity: 0;
+    width: 20px;
+  }
+}
+@media only screen and (max-width:1160px) {
+  .home{
+    width: 133%;
+    left: -287px;
+    transition: 0.5s;
+  }
+
+  #sidebar{
+    transform: translateX(-100%);
+  }
+}
+@media only screen and (max-width:860px) {
+  .date {
+    display: flex;
+    flex-direction: row;
+    padding: 13px;
+    /* left: 303px; */
+    /* width: 100%; */
+    align-items: center;
+    transition: 0.5s;
+    transform: 0.5s;
+    position: inherit;
+    margin-left: 60px;
+}
+
+    .subject {
+      display: block;
+      width: 351px;
+      position: none;
+      left: 201px;
+      transition: 0.5s;
+      font-size: 14px;
+  }
+  .sender{
+
+      width: 100px;
+  }
+  }

@@ -2,18 +2,27 @@ import React, { Component } from 'react'
 import { useState } from 'react';
 import "./styles.css"
 import { FaSearch,FaBars  } from "react-icons/fa";
+import {link} from "react-router-dom";
 import NavBar from './Navbar'
 import MailBox from './Mailbox';
+
 
 let Messages ={
     isread : true,
     sender: 'mandso',
-    subject: 'haconma matatta',
+    subject: 'haconma mahaconma matattahaconma matattahaconma matattahaconma matattahaconma matattatatta',
     date: '12/9/2020'
 }
 
 function Home()
         {
+
+            let handleClick = (e)=>{
+                console.log("this is working fine");
+                e.preventDefault();
+                e.target.style.color = 'black'
+                console.log(e.target);
+            }
             return(
                 
                 <div className = "home">
