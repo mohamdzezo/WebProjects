@@ -6,10 +6,14 @@ from django.http import JsonResponse
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
-
+from rest_framework.decorators import  api_view
+from .serializers import *
+from rest_framework.response import Response
 from .models import User, Email
 
 
+
+        
 def index(request):
 
     # Authenticated users view their inbox
@@ -177,3 +181,19 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "mail/register.html")
+
+@login_required
+@api_view(['GET', 'POST'])
+def Email_FBV(request):
+    if request.method == 'GET':
+        mail = Email.objects.all()
+        serializer = EmailSerializer(mail, many=True)
+        return Response(serializer.data)
+    
+    elif request.method == 'POST':
+        serializer = EmailSerializer(request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.data)

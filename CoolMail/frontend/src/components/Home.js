@@ -35,7 +35,7 @@ function Home()
                                 <div className="search-container">
                                     <input placeholder="Search..." className = "search-box"/><FaSearch className = "search-icon" />
                                 </div>
-
+                                
                                
                             </div> 
                             <div className = "mails-header">
