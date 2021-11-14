@@ -16,6 +16,7 @@ class Email(models.Model):
     read = models.BooleanField(default=False)
     archived = models.BooleanField(default=False)
 
+    #None REST selrialization (Manual)
     def serialize(self):
         return {
             "id": self.id,
