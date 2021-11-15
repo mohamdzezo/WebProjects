@@ -10,9 +10,9 @@ class UserSerializer(serializers.ModelSerializer):
     
 class EmailSerializer(serializers.ModelSerializer):
     
-    sendermail = serializers.CharField(source="sender.username")
-    recipients = UserSerializer(read_only=True,many=True) #Variable name here is Must Be the same name in Email to get all recipients<Users> 
-    
+    #Variables names here are Must Be the same name in Email to get all recipients<Users> 
+    sender = serializers.SlugRelatedField(slug_field="email", queryset=User.objects.all())
+    user = serializers.SlugRelatedField(slug_field="email", queryset=User.objects.all())
     class Meta:
         model = Email
-        fields = ['user','recipients','sendermail','subject','body','timestamp','read','archived']
+        fields = ['user','recipients','sender','subject','body','timestamp','read','archived']
