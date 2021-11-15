@@ -182,18 +182,31 @@ def register(request):
     else:
         return render(request, "mail/register.html")
 
+
+'''
+Right now you can use Django Above APIs in an APP
+but Due to best pracitices and limited cababilities 
+We will Refactor above APIs to Using DRF instead of Vanilla Django.
+ 
+'''
 @login_required
 @api_view(['GET', 'POST'])
 def Email_FBV(request):
+    
+    #this function is an API impelementation using RESTAPI to GET[recived mails] and POST[send mail] Mails
+    
     if request.method == 'GET':
-        mail = Email.objects.all()
+        mail = Email.objects.filter(user = request.user, recipients=request.user)
         serializer = EmailSerializer(mail, many=True)
+        # print(len(serializer.data[0]['recipients'][0]))
+        # print(serializer.data[0]['recipients'][0])
         return Response(serializer.data)
     
     elif request.method == 'POST':
-        serializer = EmailSerializer(request.data)
+        serializer = EmailSerializer(data = request.data)
+        
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
-        else:
-            return Response(serializer.data)
+        
+        return Response(serializer.data, status= status.HTTP_400_BAD_REQUEST)
